@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@m2vi/iva": "^1.0.11",
+    "moment": "^2.29.4",
+    "moment-duration-format": "^2.3.2",
     "next": "12.2.1",
+    "numeral": "^2.0.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "vimdb": "^4.0.6"
   },
   "devDependencies": {
+    "@types/moment-duration-format": "^2.2.3",
     "@types/node": "18.0.3",
+    "@types/numeral": "^2.0.2",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "eslint": "8.19.0",
