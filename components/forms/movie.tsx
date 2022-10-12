@@ -152,12 +152,11 @@ const Movie = () => {
         <dd>
           <select name='source' className='expand' onChange={handleChange}>
             <option value=''>--- Bitte wählen ---</option>
-            <option value='UHD.BluRay'>UHD Bluray (UHD)</option>
-            <option value='BluRay'>BluRay (HD)</option>
-            <option value='DVD'>DVD (SD)</option>
-            <option value='WEB'>Web-DL (SD / HD/ UHD)</option>
-            <option value='WEBRip'>WEB-Rip (SD / HD/ UHD)</option>
-            <option value='Hybrid'>Hybrid (SD / HD/ UHD)</option>
+            <option value='UHD.BluRay'>UHD Bluray</option>
+            <option value='BluRay'>BluRay</option>
+            <option value='DVD'>DVD</option>
+            <option value='WEB'>Web-DL</option>
+            <option value='WEBRip'>WEB-Rip</option>
           </select>
           <div className='form-row-explain'>Bitte gib hier die Source / Art des Releases an</div>
         </dd>
@@ -181,9 +180,8 @@ const Movie = () => {
         <dd>
           <select name='hdr' className='expand' onChange={handleChange}>
             <option value=''>-</option>
-            <option value='HDR'>HDR</option>
+            <option value='HDR'>HDR / HDR10</option>
             <option value='HDR10Plus'>HDR10+</option>
-            <option value='SDR'>- (SDR)</option>
           </select>
           <div className='form-row-explain'>Stelle bitte ein, ob das Release SDR oder HDR ist.</div>
         </dd>
@@ -197,12 +195,14 @@ const Movie = () => {
             <option value=''>--- Bitte wählen ---</option>
             <option value='x264'>x264</option>
             <option value='AVC'>AVC</option>
-            <option value='x265'>x265</option>
-            <option value='HEVC'>HEVC</option>
             <option value='MPEG'>MPEG</option>
             <option value='VC1'>VC-1</option>
+            <option value='x265'>x265</option>
+            <option value='HEVC'>HEVC</option>
           </select>
-          <div className='form-row-explain'>Stelle hier den Videocodec (x264 / x265 = Encode / Rip, AVC / HEVC = Untouched / Remux)</div>
+          <div className='form-row-explain'>
+            Stelle hier den Videocodec (x264 / x265 = Encode / Rip, AVC / MPEG / VC-1 / HEVC = Untouched / Remux)
+          </div>
         </dd>
       </dl>
       <dl className='form-row'>
@@ -213,7 +213,7 @@ const Movie = () => {
           <select name='extras' id='extras' className='expand' onChange={handleChange}>
             <option value=''>-</option>
             <option value='Remux'>Remux</option>
-            <option value='Untouched'>Untouched</option>
+            <option value='Hybrid'>Hybrid</option>
             <option value='Regraded'>Regraded</option>
             <option value='Upscale'>Upscale</option>
           </select>
