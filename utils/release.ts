@@ -1,4 +1,4 @@
-import { ReleaseInterface, ReleaseInterfaceDubbed } from '../types/main';
+import { ReleaseInterface } from '../types/main';
 
 class Release {
   removeDot(str: string) {
@@ -51,9 +51,7 @@ class Release {
           dubbed === 'Dubbed' ? (acodec.endsWith('D') || acodec.includes('.') ? `Dubbed.${acodec}` : `${acodec}D`) : acodec
         }.${language}.${resolution}.${extras === 'Hybrid' ? extras : ''}.${source}.${dv}.${
           hdr === '' && dv === '' ? (['2160p', 'UpsUHD'].includes(resolution) ? 'SDR' : '') : hdr
-        } .${['WEB', 'Hybrid.WEB'].includes(source) ? (vcodec === 'HEVC' ? 'H265' : 'H264') : vcodec}.${
-          extras !== 'Hybrid' ? extras : ''
-        }.${releaseextras}`
+        }.${vcodec}.${extras !== 'Hybrid' ? extras : ''}.${releaseextras}`
       )}`,
       rlsgrp
     );
