@@ -140,7 +140,6 @@ const Movie = () => {
             <option value='720p'>720p</option>
             <option value='1080p'>1080p</option>
             <option value='2160p'>2160p</option>
-            <option value='UpsUHD'>Upscaled UHD</option>
           </select>
           <div className='form-row-explain'>Bitte stelle die Auflösung des Releases ein</div>
         </dd>
@@ -157,6 +156,10 @@ const Movie = () => {
             <option value='DVD'>DVD</option>
             <option value='WEB'>Web-DL</option>
             <option value='WEBRip'>WEB-Rip</option>
+            <option value='VHSRip'>VHSRip</option>
+            <option value='UHD2BD'>UHD2BD</option>
+            <option value='DVD2BD'>DVD2BD</option>
+            <option value='TVRip'>TVRip</option>
           </select>
           <div className='form-row-explain'>Bitte gib hier die Source / Art des Releases an</div>
         </dd>
@@ -194,15 +197,14 @@ const Movie = () => {
           <select name='vcodec' className='expand' onChange={handleChange}>
             <option value=''>--- Bitte wählen ---</option>
             <option value='x264'>x264</option>
-            <option value='AVC'>AVC</option>
-            <option value='MPEG'>MPEG</option>
-            <option value='VC1'>VC-1</option>
+            <option value='AVC'>AVC (untouched)</option>
             <option value='x265'>x265</option>
-            <option value='HEVC'>HEVC</option>
+            <option value='HEVC'>HEVC (untouched)</option>
+            <option value='VC1'>VC-1 (untouched)</option>
+            <option value='MPEG2'>MPEG2</option>
+            <option value='XviD'>XviD</option>
           </select>
-          <div className='form-row-explain'>
-            Stelle hier den Videocodec (x264 / x265 = Encode / Rip, AVC / MPEG / VC-1 / HEVC = Untouched / Remux)
-          </div>
+          <div className='form-row-explain'>Stelle hier den Videocodec (x264 / x265 = Encode / Rip, AVC / HEVC = Untouched / Remux)</div>
         </dd>
       </dl>
       <dl className='form-row'>
@@ -257,7 +259,7 @@ const Movie = () => {
         <dt></dt>
         <dd>
           <button className='generate' data-art='movie' onClick={() => setResult(release.create(form))}>
-            Threadtitel generieren
+            Releasenamen generieren
           </button>
         </dd>
       </dl>
