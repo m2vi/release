@@ -24,10 +24,6 @@ class Release {
     return `${this.removeDot(result.replace(/\.$/, '').trim())}${rlsgrp ? `-${rlsgrp}` : ''}`.replace(/\s/g, '.').replace(/\.+/g, '.');
   }
 
-  sceneFormat(text: string) {
-    return text.replace(/I/g, 'i');
-  }
-
   create({
     title,
     year,
@@ -46,13 +42,11 @@ class Release {
     rlsgrp,
   }: ReleaseInterface) {
     return this.formatResult(
-      `${this.titleToRT(title)}.${this.sceneFormat(
-        `${year}.${cut}.${german}.${
-          dubbed === 'Dubbed' ? (acodec.endsWith('D') || acodec.includes('.') ? `${acodec}.Dubbed` : `${acodec}D`) : acodec
-        }.${language}.${resolution}.${extras === 'Hybrid' ? extras : ''}.${source}.${dv}.${
-          hdr === '' && dv === '' ? (['2160p'].includes(resolution) ? 'SDR' : '') : hdr
-        }.${vcodec}.${extras !== 'Hybrid' ? extras : ''}.${releaseextras}`
-      )}`,
+      `${this.titleToRT(title)}.${year}.${cut}.${german}.${
+        dubbed === 'Dubbed' ? (acodec.endsWith('D') || acodec.includes('.') ? `${acodec}.Dubbed` : `${acodec}D`) : acodec
+      }.${language}.${resolution}.${extras === 'Hybrid' ? extras : ''}.${source}.${dv}.${
+        hdr === '' && dv === '' ? (['2160p'].includes(resolution) ? 'SDR' : '') : hdr
+      }.${vcodec}.${extras !== 'Hybrid' ? extras : ''}.${releaseextras}`,
       rlsgrp
     );
   }
