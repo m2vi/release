@@ -96,6 +96,7 @@ const Movie = () => {
             <option value='AAC'>AAC</option>
             <option value='AC3'>AC3</option>
             <option value='EAC3'>DD+ / EAC3</option>
+            <option value='EAC3.Atmos'>DD+ Atmos / EAC3 Atmos</option>
             <option value='DTS'>DTS</option>
             <option value='DTSHD'>DTSHD</option>
             <option value='DTSX'>DTS:X</option>
